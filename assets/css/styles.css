@@ -108,6 +108,15 @@ body {
 .joke-grid .joke-num { font-size: 0.8rem; color: var(--muted); font-weight: 700; }
 .results-count { text-align: center; color: var(--muted); margin-top: 1.5rem; font-size: 0.9rem; }
 
+/* Archive lock card */
+.lock-card {
+  text-align: center; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; gap: 0.75rem;
+  background: var(--navy); color: #fff; border-top-color: var(--navy);
+}
+.lock-card .joke-setup { color: #fff; margin: 0; }
+.lock-emoji { font-size: 2rem; }
+
 /* Book */
 .book-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 760px; margin: 0 auto; }
 .book-card {

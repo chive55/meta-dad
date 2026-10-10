@@ -46,6 +46,7 @@ function splitJoke(text) {
 })();
 
 /* --- Joke archive --- */
+const FREE_LIMIT = 20; /* free teaser jokes per tab; the rest live in the book */
 const state = { set: "daily", category: "All", query: "" };
 
 function currentSet() {
@@ -56,7 +57,7 @@ function setLabel() {
 }
 
 function renderChips() {
-  const cats = ["All", ...new Set(currentSet().map((j) => j.category))];
+  const cats = ["All", ...new Set(currentSet().slice(0, FREE_LIMIT).map((j) => j.category))];
   const wrap = document.getElementById("category-chips");
   wrap.innerHTML = "";
   cats.forEach((c) => {
@@ -70,7 +71,8 @@ function renderChips() {
 
 function renderGrid() {
   const q = state.query.trim().toLowerCase();
-  const jokes = currentSet().filter(
+  const free = currentSet().slice(0, FREE_LIMIT);
+  const jokes = free.filter(
     (j) =>
       (state.category === "All" || j.category === state.category) &&
       (!q || j.text.toLowerCase().includes(q))
@@ -97,8 +99,27 @@ function renderGrid() {
     }
     grid.appendChild(card);
   });
+  const lock = document.createElement("div");
+  lock.className = "joke-card lock-card";
+  const lockEmoji = document.createElement("p");
+  lockEmoji.className = "lock-emoji";
+  lockEmoji.textContent = "🔒";
+  const lockTitle = document.createElement("p");
+  lockTitle.className = "joke-setup";
+  lockTitle.textContent = "Want the other 180?";
+  const lockSub = document.createElement("p");
+  lockSub.textContent = "All 200 groaners live in the book.";
+  const lockBtn = document.createElement("a");
+  lockBtn.className = "btn btn-primary";
+  lockBtn.href = "#book";
+  lockBtn.textContent = "Get the book";
+  lock.appendChild(lockEmoji);
+  lock.appendChild(lockTitle);
+  lock.appendChild(lockSub);
+  lock.appendChild(lockBtn);
+  grid.appendChild(lock);
   document.getElementById("results-count").textContent =
-    jokes.length + " of " + currentSet().length + " " + setLabel() + " jokes";
+    "Showing " + FREE_LIMIT + " free teasers · unlock all 200 in the book";
 }
 
 document.querySelectorAll(".tab").forEach((t) => {
