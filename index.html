@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Dad | One Dad Joke a Day</title>
+<meta name="description" content="Meta Dad tells one dad joke a day. So bad, they're good. Get the book, browse 200 groaners, and shop the merch.">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="assets/img/meta-dad-avatar.webp">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="#top">
+    <img src="assets/img/meta-dad-avatar.webp" alt="Meta Dad" class="brand-avatar">
+    <span>Meta Dad</span>
+  </a>
+  <nav class="site-nav">
+    <a href="#today">Today's Joke</a>
+    <a href="#jokes">Jokes</a>
+    <a href="#book">Book</a>
+    <a href="#merch">Merch</a>
+    <a href="#follow">Follow</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="assets/img/meta-dad-avatar.webp" alt="Meta Dad, your favorite AI dad" class="hero-avatar">
+    <h1>Meta Dad</h1>
+    <p class="tagline">One dad joke a day. So bad, they're good.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#today">Today's joke</a>
+      <a class="btn btn-secondary" href="https://metadad.gumroad.com/l/gtairk" target="_blank" rel="noopener">Get the book</a>
+    </div>
+  </section>
+
+  <!-- TODAY'S JOKE -->
+  <section id="today" class="section">
+    <h2>Today's Joke</h2>
+    <div class="joke-card joke-card-big" id="daily-joke">
+      <p class="joke-setup" id="daily-setup">Loading...</p>
+      <button class="btn btn-primary" id="reveal-btn">Get the punchline</button>
+      <p class="joke-punchline hidden" id="daily-punchline"></p>
+      <p class="joke-meta" id="daily-meta"></p>
+    </div>
+  </section>
+
+  <!-- JOKE ARCHIVE -->
+  <section id="jokes" class="section">
+    <h2>The Joke Archive</h2>
+    <p class="section-sub">All 200 groaners, free to browse. Want them in print? <a href="#book">Grab the book.</a></p>
+    <div class="archive-controls">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-set="daily" role="tab">Daily 100</button>
+        <button class="tab" data-set="halloween" role="tab">Halloween 100</button>
+      </div>
+      <input type="search" id="joke-search" placeholder="Search jokes..." aria-label="Search jokes">
+    </div>
+    <div class="chips" id="category-chips"></div>
+    <div class="joke-grid" id="joke-grid"></div>
+    <p class="results-count" id="results-count"></p>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book" class="section">
+    <h2>The Book</h2>
+    <p class="section-sub">100 Dad Jokes: 100 Guaranteed Groaners. The jokes your family pretends not to love.</p>
+    <div class="book-cards">
+      <div class="book-card">
+        <h3>Digital Edition</h3>
+        <p class="book-price">$4.99</p>
+        <p>Pay what you want, starting at $4.99. Instant download, read anywhere.</p>
+        <a class="btn btn-primary" href="https://metadad.gumroad.com/l/gtairk" target="_blank" rel="noopener">Get it on Gumroad</a>
+      </div>
+      <div class="book-card">
+        <h3>Paperback</h3>
+        <p class="book-price">$9.99</p>
+        <p>The real deal. Coffee table ready, dad approved.</p>
+        <a class="btn btn-primary" href="https://www.amazon.com/dp/B0HM1223CM" target="_blank" rel="noopener">Get it on Amazon</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MERCH -->
+  <section id="merch" class="section">
+    <h2>Merch</h2>
+    <p class="section-sub">Twelve designs, zero chill. Tees, hoodies, and mugs dropping soon.</p>
+    <div class="merch-grid" id="merch-grid"></div>
+  </section>
+
+  <!-- FOLLOW -->
+  <section id="follow" class="section">
+    <h2>Follow the Dad</h2>
+    <p class="section-sub">A new joke video every day on every platform. Pick your favorite.</p>
+    <div class="social-grid">
+      <a class="social-card" href="https://www.youtube.com/@meta_dad" target="_blank" rel="noopener">YouTube</a>
+      <a class="social-card" href="https://www.tiktok.com/@metadadjokes" target="_blank" rel="noopener">TikTok</a>
+      <a class="social-card" href="https://www.instagram.com/metadadjokes" target="_blank" rel="noopener">Instagram</a>
+      <a class="social-card" href="https://www.facebook.com/people/Meta-Dad/100093024100831/" target="_blank" rel="noopener">Facebook</a>
+      <a class="social-card" href="https://www.threads.com/@metadadjokes" target="_blank" rel="noopener">Threads</a>
+      <a class="social-card" href="https://x.com/MetaDadJokes" target="_blank" rel="noopener">X</a>
+      <a class="social-card" href="https://www.reddit.com/user/MetaDadJokes/" target="_blank" rel="noopener">Reddit</a>
+      <a class="social-card" href="https://www.pinterest.com/metadadjokes" target="_blank" rel="noopener">Pinterest</a>
+      <a class="social-card" href="https://bsky.app/profile/metadadjokes.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+      <a class="social-card" href="https://www.snapchat.com/@meta_dad" target="_blank" rel="noopener">Snapchat</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <img src="assets/img/meta-dad-avatar.webp" alt="Meta Dad" class="footer-avatar">
+  <p>Meta Dad is an AI character. One dad joke a day. So bad, they're good.</p>
+  <p class="copyright">&copy; 2026 Meta Dad. All groans reserved.</p>
+</footer>
+
+<script src="assets/js/jokes-data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
